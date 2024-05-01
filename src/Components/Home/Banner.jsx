@@ -21,7 +21,7 @@ const Banner = () => {
             professional, banker, or anyone seeking efficient Project handling,
             we've got you covered.
           </p>
-          <Link href="/dashboard">
+          <Link href="/login">
             <button className="bg-[#4A35D0] border-2  border-[#4A35D0] hover:bg-transparent hover:text-black duration-300 flex gap-2 items-center text-white px-4 lg:px-6 py-2 lg:py-3 font-medium rounded-md mt-3">
               Let's Explore <BiTask className="text-[18px]" />
             </button>

@@ -4,6 +4,9 @@ import { useState } from "react";
 import { IoMdMenu, IoMdNotificationsOutline } from "react-icons/io";
 import { IoIosSearch } from "react-icons/io";
 import { RxCross1 } from "react-icons/rx";
+import { LuLayoutDashboard } from "react-icons/lu";
+import { GoProjectRoadmap } from "react-icons/go";
+import { FaPlus } from "react-icons/fa";
 
 export default function Page({ children }) {
   const [open, setOpen] = useState(false);
@@ -18,7 +21,7 @@ export default function Page({ children }) {
           <div
             className={`${
               open ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
-            } lg:hidden transition-all duration-500 border border-gray-200 shadow-lg backdrop-blur-sm transform h-full w-[350px] bg-white text-black absolute top-0 left-0`}
+            } lg:hidden transition-all z-[99999999] duration-500 border border-gray-200 shadow-lg backdrop-blur-sm transform h-full w-[350px] bg-white text-black absolute top-0 left-0`}
           >
             <button
               className="px-4 py-2 text-3xl font-semibold flex absolute right-0 mt-2"
@@ -26,24 +29,52 @@ export default function Page({ children }) {
             >
               <RxCross1 />
             </button>
+            <div>
+              <div className="border-b-2 border-slate-300 p-4">
+                <h1 className="font-bold text-2xl text-center">
+                  <span className="text-3xl text-violet-500">P.M</span>
+                  <span className="text-3xl text-violet-500"> S</span>oftware
+                </h1>
+              </div>
+              <ul className="mt-4 text-center font-medium">
+                <li className="  bg-violet-200 cursor-pointer flex items-center gap-2 rounded w-full   px-5 py-2 mb-2">
+                  <LuLayoutDashboard className="text-[22px]" />
+                  <Link href="/dashboard/">Home</Link>
+                </li>
+                <li className="  bg-violet-200 cursor-pointer flex items-center gap-2 rounded w-full   px-5 py-2 mb-2">
+                  <FaPlus className="text-[20px]" />
+                  <Link href="/dashboard/add-project">Add Project</Link>
+                </li>
+                <li className="bg-violet-200 cursor-pointer flex items-center gap-2 px-4 py-2 mb-2 ">
+                  <GoProjectRoadmap className="text-[22px]" />
+                  <Link href="/dashboard/projects">All Projects</Link>
+                </li>
+              </ul>
+            </div>
           </div>
 
           {/* lg sidebar */}
           <div className="w-[300px] relative bg-[#f1f4f6] h-full hidden lg:block ">
-            <div className="p-4">
-            <h1 className="font-bold text-2xl text-center">
-            <span className="text-3xl text-violet-500">P.M</span> 
-            <span className="text-3xl text-violet-500"> S</span>oftware
-          </h1>
+            <div className="border-b-2 border-slate-300 p-4">
+              <h1 className="font-bold text-2xl text-center">
+                <span className="text-3xl text-violet-500">P.M</span>
+                <span className="text-3xl text-violet-500"> S</span>oftware
+              </h1>
             </div>
 
             <div>
-              <ul className="mt-4 ">
-                <li className=" bg-[#EEF2FC] text-white  rounded w-full text-center block px-4 py-2 mb-2">
+              <ul className="mt-4 text-center font-medium">
+                <li className="  bg-violet-200 cursor-pointer flex items-center gap-2 rounded w-full   px-5 py-2 mb-2">
+                  <LuLayoutDashboard className="text-[22px]" />
                   <Link href="/dashboard/">Home</Link>
                 </li>
-                <li className="bg-slate-400 px-4 py-2 mb-2 ">
-                  <Link href="/dashboard/projects">Projects</Link>
+                <li className="  bg-violet-200 cursor-pointer flex items-center gap-2 rounded w-full   px-5 py-2 mb-2">
+                  <FaPlus className="text-[20px]" />
+                  <Link href="/dashboard/add-project">Add Project</Link>
+                </li>
+                <li className="bg-violet-200 cursor-pointer flex items-center gap-2 px-4 py-2 mb-2 ">
+                  <GoProjectRoadmap className="text-[22px]" />
+                  <Link href="/dashboard/projects">All Projects</Link>
                 </li>
               </ul>
             </div>
@@ -59,7 +90,7 @@ export default function Page({ children }) {
                   <input
                     className="border w-full rounded-sm py-2 px-2 "
                     type="text"
-                    placeholder="Search by task name..."
+                    placeholder="Search by Project name..."
                   />
                   <IoIosSearch className="absolute top-2 right-2" />
                 </form>
