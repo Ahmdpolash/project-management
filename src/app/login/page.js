@@ -22,6 +22,7 @@ const Login = () => {
       values.password === "demoPassword"
     ) {
       router.push("/dashboard");
+      toast.success("Login Successfully");
     } else {
       toast.error("Invalid Credentials !!");
     }
@@ -91,10 +92,12 @@ const Login = () => {
                       </Form.Item>
                     </div>
 
-                 
-
                     <Form.Item>
-                      <Button style={{marginTop: '10px'}} type="primary" htmlType="submit">
+                      <Button
+                        style={{ marginTop: "10px" }}
+                        type="primary"
+                        htmlType="submit"
+                      >
                         Login
                       </Button>
                     </Form.Item>

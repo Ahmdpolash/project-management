@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 import { IoMdMenu, IoMdNotificationsOutline } from "react-icons/io";
 import { IoIosSearch } from "react-icons/io";
@@ -13,7 +14,7 @@ export default function Page({ children }) {
     <div>
       <div className="flex">
         <div>
-          {/* mobile menu */}
+          {/* mobile sidebar */}
           <div
             className={`${
               open ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
@@ -27,9 +28,25 @@ export default function Page({ children }) {
             </button>
           </div>
 
-          {/* lg navbar */}
-          <div className="w-[300px] relative bg-[#D9E1F2] h-full hidden lg:block p-8">
-            <h2 className="text-center">Logo</h2>
+          {/* lg sidebar */}
+          <div className="w-[300px] relative bg-[#f1f4f6] h-full hidden lg:block ">
+            <div className="p-4">
+            <h1 className="font-bold text-2xl text-center">
+            <span className="text-3xl text-violet-500">P.M</span> 
+            <span className="text-3xl text-violet-500"> S</span>oftware
+          </h1>
+            </div>
+
+            <div>
+              <ul className="mt-4 ">
+                <li className=" bg-[#EEF2FC] text-white  rounded w-full text-center block px-4 py-2 mb-2">
+                  <Link href="/dashboard/">Home</Link>
+                </li>
+                <li className="bg-slate-400 px-4 py-2 mb-2 ">
+                  <Link href="/dashboard/projects">Projects</Link>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
