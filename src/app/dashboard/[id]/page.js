@@ -17,6 +17,7 @@ import {
   Form,
   Input,
   Select,
+  Option,
 } from "antd";
 import axios from "axios";
 const Details = ({ params }) => {
