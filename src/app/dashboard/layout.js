@@ -8,6 +8,8 @@ import { LuLayoutDashboard } from "react-icons/lu";
 import { GoProjectRoadmap } from "react-icons/go";
 import { FaPlus } from "react-icons/fa";
 import { usePathname } from "next/navigation";
+import user from "@/assest/user.png";
+import Image from "next/image";
 
 export default function Page({ children }) {
   const [open, setOpen] = useState(false);
@@ -33,10 +35,17 @@ export default function Page({ children }) {
             </button>
             <div>
               <div className="border-b-2 border-slate-300 p-4">
-                <h1 className="font-bold text-2xl text-center">
+                <Image
+                  className="rounded-full"
+                  src={user}
+                  height={70}
+                  width={70}
+                  alt="user"
+                />
+                {/* <h1 className="font-bold text-2xl text-center">
                   <span className="text-3xl text-violet-500">P.M</span>
                   <span className="text-3xl text-violet-500"> S</span>oftware
-                </h1>
+                </h1> */}
               </div>
               <ul className="mt-4 text-center font-medium">
                 <li className="  bg-violet-200 cursor-pointer flex items-center gap-2 rounded w-full   px-5 py-2 mb-2">
@@ -58,10 +67,22 @@ export default function Page({ children }) {
           {/* lg sidebar */}
           <div className="w-[300px] relative bg-[#fff] h-full hidden lg:block ">
             <div className="border-b-2 border-slate-300 p-4">
-              <h1 className="font-bold text-2xl text-center">
+              <Image
+                className="rounded-full mx-auto"
+                src={user}
+                height={90}
+                width={90}
+                alt="user"
+              />
+
+              <h1 className="text-center mx-auto text-2xl mt-2">
+                Polash Ahmed
+              </h1>
+
+              {/* <h1 className="font-bold text-2xl text-center">
                 <span className="text-3xl text-violet-500">P.M</span>
                 <span className="text-3xl text-violet-500"> S</span>oftware
-              </h1>
+              </h1> */}
             </div>
 
             <div>

@@ -204,7 +204,7 @@ const Project = () => {
 
           <Form.Item>
             <Button className="bg-violet-500" type="primary" htmlType="submit">
-              Add Project
+              Update Project
             </Button>
           </Form.Item>
         </Form>
