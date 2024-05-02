@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { BiTask } from "react-icons/bi";
+import banner from '@/assest/img.png'
 
 const Banner = () => {
   return (
@@ -29,11 +30,11 @@ const Banner = () => {
         </div>
 
         <div className="ml-0 lg:ml-5 mt-10 lg:mt-0 order-1 lg:order-2">
-          {/* <Image
+          <Image
             className="w-[370px] md:w-full h-[250px] lg:h-full mx-auto lg:mx-0 lg:w-[520px] rounded-lg"
             src={banner}
             alt=""
-          /> */}
+          />
         </div>
       </div>
     </div>

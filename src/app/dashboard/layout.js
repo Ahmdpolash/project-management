@@ -7,12 +7,14 @@ import { RxCross1 } from "react-icons/rx";
 import { LuLayoutDashboard } from "react-icons/lu";
 import { GoProjectRoadmap } from "react-icons/go";
 import { FaPlus } from "react-icons/fa";
+import { usePathname } from "next/navigation";
 
 export default function Page({ children }) {
   const [open, setOpen] = useState(false);
   const toggleMenu = () => {
     setOpen(!open);
   };
+  const pathname = usePathname();
   return (
     <div>
       <div className="flex">
@@ -54,7 +56,7 @@ export default function Page({ children }) {
           </div>
 
           {/* lg sidebar */}
-          <div className="w-[300px] relative bg-[#f1f4f6] h-full hidden lg:block ">
+          <div className="w-[300px] relative bg-[#fff] h-full hidden lg:block ">
             <div className="border-b-2 border-slate-300 p-4">
               <h1 className="font-bold text-2xl text-center">
                 <span className="text-3xl text-violet-500">P.M</span>
@@ -64,15 +66,27 @@ export default function Page({ children }) {
 
             <div>
               <ul className="mt-4 text-center font-medium">
-                <li className="  bg-violet-200 cursor-pointer flex items-center gap-2 rounded w-full   px-5 py-2 mb-2">
+                <li
+                  className={`${
+                    pathname === "/dashboard" ? "bg-slate-200" : ""
+                  }  cursor-pointer hover:bg-slate-100 duration-300 flex items-center gap-2  w-full   px-5 py-2 mb-2`}
+                >
                   <LuLayoutDashboard className="text-[22px]" />
-                  <Link href="/dashboard/">Home</Link>
+                  <Link href="/dashboard/">Dashboard</Link>
                 </li>
-                <li className="  bg-violet-200 cursor-pointer flex items-center gap-2 rounded w-full   px-5 py-2 mb-2">
+                <li
+                  className={`${
+                    pathname === "/dashboard/add-project" ? "bg-slate-200" : ""
+                  }  cursor-pointer hover:bg-slate-100 duration-300 flex items-center gap-2  w-full   px-5 py-2 mb-2`}
+                >
                   <FaPlus className="text-[20px]" />
                   <Link href="/dashboard/add-project">Add Project</Link>
                 </li>
-                <li className="bg-violet-200 cursor-pointer flex items-center gap-2 px-4 py-2 mb-2 ">
+                <li
+                  className={`${
+                    pathname === "/dashboard/projects" ? "bg-slate-200" : ""
+                  }  cursor-pointer hover:bg-slate-100 duration-300 flex items-center gap-2  w-full   px-5 py-2 mb-2`}
+                >
                   <GoProjectRoadmap className="text-[22px]" />
                   <Link href="/dashboard/projects">All Projects</Link>
                 </li>
