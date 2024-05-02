@@ -104,12 +104,7 @@ const Login = () => {
                   </Form>
                 </div>
 
-                <div className="absolute lg:block bottom-0 right-0">
-                  <img
-                    src="https://i.ibb.co/bmC91P9/Screenshot-62-removebg-preview.png"
-                    alt=""
-                  />
-                </div>
+                
               </div>
             </div>
             <div className="hidden lg:block  ">

@@ -28,7 +28,7 @@ const Details = ({ params }) => {
     const filter = projects?.find((project) => project?.id == params?.id);
 
     setData(filter);
-  }, [projects]);
+  }, [projects, params.id]);
 
   console.log(data);
 

@@ -18,13 +18,13 @@ const Banner = () => {
             Welcome to <strong className="text-[#705CF5]">P.M Software</strong>,
             where productivity meets simplicity. Our intuitive Project
             management system empowers you to effortlessly organize your work
-            and achieve more. Whether you're a developer, corporate
+            and achieve more. Whether youre a developer, corporate
             professional, banker, or anyone seeking efficient Project handling,
-            we've got you covered.
+            weve got you covered.
           </p>
           <Link href="/login">
             <button className="bg-[#4A35D0] border-2  border-[#4A35D0] hover:bg-transparent hover:text-black duration-300 flex gap-2 items-center text-white px-4 lg:px-6 py-2 lg:py-3 font-medium rounded-md mt-3">
-              Let's Explore <BiTask className="text-[18px]" />
+              Lets Explore <BiTask className="text-[18px]" />
             </button>
           </Link>
         </div>

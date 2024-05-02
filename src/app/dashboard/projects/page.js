@@ -79,23 +79,26 @@ const Project = () => {
   // edit project
   const handleSubmit = async (values) => {
     try {
-      const res = await axios.post(
-        "https://6630e1d3c92f351c03db7082.mockapi.io/api/v1/projects",
-        values
-      );
+      const projectId = singleProject?.id;
 
-      if (res.status === 201) {
-        message.success("Project added successfully");
-        router.push("/dashboard/projects");
-        form.resetFields();
+      if (projectId) {
+        const res = await axios.put(
+          `https://6630e1d3c92f351c03db7082.mockapi.io/api/v1/projects/${projectId}`,
+          values
+        );
+
+        if (res.status === 200) {
+          message.success("Project updated successfully");
+          setModal2Open(false);
+          refetch();
+        }
       }
     } catch (error) {
-      console.error("Error adding project:", error);
+      toast.error("Failed to update project");
     }
   };
 
-  const onFinishFailed = (errorInfo) => {};
-
+  //get default value
   const handleEdit = async (id) => {
     const result = await axios.get(
       `https://6630e1d3c92f351c03db7082.mockapi.io/api/v1/projects/${id}`
@@ -161,12 +164,7 @@ const Project = () => {
             Edit Project
           </h1>
         </div>
-        <Form
-          name="addProjectForm"
-          onFinish={handleSubmit}
-          onFinishFailed={onFinishFailed}
-          className="  "
-        >
+        <Form name="addProjectForm" onFinish={handleSubmit} className="  ">
           <div className="flex flex-col space-y-2 mb-2">
             <label htmlFor="project_name" className="text-[16px] font-medium">
               Project Name *
