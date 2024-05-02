@@ -60,7 +60,7 @@ const Details = ({ params }) => {
         <h1 className="mb-2 text-[17px] ml-2 font-semibold">
           {" "}
           <span className="text-[#5082E8] font-bold text-[18px]"></span> All
-          Tasks from "{data?.project_name}"
+          Tasks from {data?.project_name}
         </h1>
 
         <Button size="large" onClick={() => setModal2Open(true)} type="primary">
